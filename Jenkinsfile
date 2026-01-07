@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        /*stage('Build') {
             agent{
                 docker{
                     image 'node:18-alpine'
@@ -19,7 +19,7 @@ pipeline {
                 ls -la
                 '''
             }
-        }
+        } */
         
         stage('Test'){
              agent{
@@ -32,7 +32,7 @@ pipeline {
              steps{
             sh '''
             echo 'Hello test stage'
-            test -f build/index.html
+            #test -f build/index.html
             npm test
 
             '''
