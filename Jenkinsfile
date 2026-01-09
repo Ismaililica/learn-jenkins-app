@@ -97,6 +97,16 @@ pipeline {
                 '''
             }
         }
+
+        stage('Approve Deploy Production'){
+            timeout(1) {
+        input cancel: 'Onaylamıyorum', message: 'Production ortamına deploy etmek üzeresiniz ', ok: 'Onaylıyorum'
+            }
+            
+        }
+
+
+
          stage('Deploy Production') {
             agent{
                 docker{
