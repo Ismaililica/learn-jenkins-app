@@ -99,10 +99,11 @@ pipeline {
         }
 
         stage('Approve Deploy Production'){
+            steps{
             timeout(1) {
-        input cancel: 'Onaylamıyorum', message: 'Production ortamına deploy etmek üzeresiniz ', ok: 'Onaylıyorum'
+            input cancel: 'Onaylamıyorum', message: 'Production ortamına deploy etmek üzeresiniz ', ok: 'Onaylıyorum'
             }
-            
+            }
         }
 
 
