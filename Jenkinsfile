@@ -102,6 +102,7 @@ pipeline {
             }
            
         }
+        }
 
 
             stage('Staging E2E'){
