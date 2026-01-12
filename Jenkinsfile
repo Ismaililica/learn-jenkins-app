@@ -8,6 +8,16 @@ pipeline {
     }
 
     stages {
+        
+        stage('Docker'){
+            steps{
+                sh 'docker build -t my-image .'
+            }
+        }
+
+
+
+
         stage('Build') {
             agent{
                 docker{
@@ -140,8 +150,8 @@ pipeline {
                     steps{
                     sh '''
                     node --version
-                    npm install netlify-cli@20.1.1 
-                    node_modules/.bin/netlify --version
+                 
+                    netlify --version
                     echo "Deploying to production SITE_ID= $NETLIFY_SITE_ID"
                     netlify status
                     netlify deploy --dir=build --prod
