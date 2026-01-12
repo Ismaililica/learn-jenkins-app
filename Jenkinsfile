@@ -9,10 +9,7 @@ pipeline {
 
     stages {
         
-       
-
-
-
+    
 
         stage('Build') {
             agent{
